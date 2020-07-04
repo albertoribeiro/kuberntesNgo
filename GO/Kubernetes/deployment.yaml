@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: hello-goweb
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: hello-goweb
+    template: 
+        metadata:
+            labels:
+                app: hello-goweb 
+        spec: 
+            containers:
+            - name: goweb
+              image: albertoribeiroflavio/kubernetesngo    
+              ports:
+              - containerPort: 8000
